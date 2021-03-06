@@ -1,5 +1,11 @@
 * {
     padding:0;
     margin: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; 
+    /* box sixing set to border box will make it so when changing padding of an element, the dimensions are unchanged. Margin is never affected by box sixing */
+}
+
+body {
+    height: 100vh;
+    background: #1d20b4;
 }
