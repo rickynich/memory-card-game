@@ -9,3 +9,7 @@ body {
     height: 100vh;
     background: #1d20b4;
 }
+
+img {
+    width: 100px;
+}
