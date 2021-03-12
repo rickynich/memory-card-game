@@ -16,11 +16,10 @@ function flipCard() {
 		checkForMatch();
 	}
 	function checkForMatch() {
-		if (firstCard.dataset.framework === secondCard.dataset.framework) {
-			disableCards();
-		} else {
-			unflipCards();
-		}
+		let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
+
+		isMatch ? disableCards() : unflipCards();
+
 	}
 }
 
