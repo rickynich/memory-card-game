@@ -4,7 +4,7 @@ let hasFlippedCard = false;
 let firstCard, secondCard;
 
 function flipCard() {
-	this.classList.add('flip');
+	this.classList.add("flip");
 
 	if (!hasFlippedCard) {
 		//first click on a card
@@ -12,18 +12,16 @@ function flipCard() {
 		firstCard = this;
 		return;
 	}
-	
+	//second click
 	hasFlippedCard = false;
 	secondCard = this;
 
 	checkForMatch();
+}
+function checkForMatch() {
+	let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
 
-	function checkForMatch() {
-		let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
-
-		isMatch ? disableCards() : unflipCards();
-
-	}
+	isMatch ? disableCards() : unflipCards();
 }
 
 function disableCards() {
