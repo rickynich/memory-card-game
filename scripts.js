@@ -6,6 +6,8 @@ let firstCard, secondCard;
 
 function flipCard() {
 	if (lockBoard) return; //will stop more cards from being flipped while in the setTimeout
+	if (this === firstCard) return;
+
 	this.classList.add("flip");
 
 	if (!hasFlippedCard) {
@@ -41,4 +43,8 @@ function unflipCards() {
 	}, 1100);
 }
 
+function resetBoard() {
+	[hasFlippedCard, lockBoard] = [false, false]
+	[firstCard, secondCard] = [null, null]
+}
 cards.forEach((card) => card.addEventListener("click", flipCard));
